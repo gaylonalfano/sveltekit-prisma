@@ -10,6 +10,7 @@ export const auth = lucia({
 	adapter: prisma(prismaClient),
 	env: dev ? 'DEV' : 'PROD',
 	transformUserData: (userData) => {
+    // We return what we want our User object looks like
 		return {
 			userId: userData.id,
 			username: userData.username,
